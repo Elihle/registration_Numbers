@@ -1,0 +1,14 @@
+.heading {
+  /* color: orange; */
+
+}
+
+.wrapper {
+  background-color: #E8E8E8	;
+  text-align: center;
+}
+
+#regBtn {
+  border-color: black;
+  background-color: yellow;
+}
