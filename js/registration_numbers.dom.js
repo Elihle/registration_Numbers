@@ -1,19 +1,28 @@
-var inputNameElem = document.querySelector(".inputName");
-var addBtnElem = document.querySelector(".addBtn");
-var displayElement = document.querySelector(".displayElement");
+var inputNameElem = document.querySelector('.inputName');
+var addBtnElement = document.querySelector('.addBtn');
+var displayElement = document.querySelector('.display');
 
-var registrationNum = regNumbers();
+var regTowns = regNumbers();
 
-function clickAddBtn(){
-var textEntered = inputNameElem.value;
+function clickAddButton() {
+   var enterInput = inputNameElem.value;
+    var displayString = enterInput;
+    var node = document.createElement("button");
+    var textnode = document.createTextNode(enterInput);
+    node.style.backgroundColor = 'yellow';
+    node.style.borderColor = 'black';
+    node.style.display = 'block';
+    node.style.alignItems = 'center';
 
-var displayReg = registrationNum.countAll(regNum);
-var regNums = registrationNum.addAllReg();
+    node.appendChild(textnode);
+    document.getElementById("displayMe").appendChild(node);
 
-inputNameElem.innerHTML = "";
-displayElement.innerHTML = displayReg;
+  }
 
 
-}
+  // document.getElementById('displayMe').innerHTML = displayString;
+  // //displayElement.innerHTML = displayString;
+  // inputNameElem.value = '';
 
-addBtnElem.addEventLister("click", clickAddBtn);
+
+addBtnElement.addEventListener('click', clickAddButton);

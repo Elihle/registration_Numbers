@@ -1,19 +1,41 @@
 function regNumbers(stored){
 var regStored = stored || {};
 
-function countRegNumber(regNum){
+function countAllFromTown(regNum, location){
+ if (regStored[location] === undefined){
+   regStored[location] === 0;
+   localStorage.setItem("regStored", JSON.stringify({}));
+ }
 
-return regNum.split(',').length;
+ if (location === "Cape Town"){
+   return "CA" + regNum;
+ }
+
+ if (location === "Paarl"){
+   return "CL" + regNum;
+ }
+
+ if (location === "George"){
+   return "CJ" + regNum;
+ }
+
+ if (location === "Stellenbosch"){
+   return "CK" + regNum;
+ }
 }
-regCount = countRegNumber('CA 182736,CY 523519,CJ 812328');
 
+function regCount(){
+  var stored = JSON.parse(localStorage.getItem("regStored"));
+  return Object.keys(stored);
+}
 
-function addedReg(){
+function allTowns(){
   return regStored;
 }
 
 return {
-  countAll: countRegNumber,
-  addAllReg: addedReg
+  fromTown: countAllFromTown,
+  countTowns: regCount,
+  townStored: allTowns
 }
 }

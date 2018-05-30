@@ -17,27 +17,42 @@
       <h1>REGISTRATION NUMBERS</h1>
     </div>
     <p>
-      <div class="">
-        <b>Registration Number :</b> <input type="text" class="inputName">
+      <div class="row">
+        <div class="three columns">
+          <b>Registration Number :</b> <input type="text" class="inputName">
+        </div>
+
+        <div class="three columns">
+          <div class="dropdown">
+            Town:<input type="button" value="Dropdown" class="dropbtn" id="addMeBtn">
+            <div class="dropdown-content">
+              <a href="#">Cape Town</a>
+              <a href="#">Paarl</a>
+              <a href="#">Goerge</a>
+              <a href="#">Stellenbosch</a>
+            </div>
+          </div>
+        </div>
       </div>
-          <p>
-            <div class="row">
-              <div class="twelve columns">
-                <input type="button" value="Add" class="addBtn">
-              </div>
-              <div class="row">
-                <div class="twelve columns">
-                <input type="button" value="CA123" class="regNoBtn" id="regBtn">
-              </div>
+      
+      <p>
+        <p>
+          <br>
+          <div class="row">
+            <div class="twelve columns">
+              <input type="button" value="Add" class="addBtn" id="addMeBtn">
             </div>
-            <div class="row">
-              <div class="twelve columns">
-                <div class="displayElement">
-
-                </div>
-
+          </div>
+          <div class="row">
+            <div class="twelve columns">
+              <div class="displayElement" id="displayMe">
               </div>
+
             </div>
+          </div>
+
+
+  </div>
 
   </div>
 </body>
