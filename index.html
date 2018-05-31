@@ -14,35 +14,35 @@
 <body>
   <div class="wrapper">
     <div class="heading">
-      <h1>REGISTRATION NUMBERS</h1>
+      <h4>REGISTRATION NUMBERS</h4>
+      <hr id="styleMe">
     </div>
     <p>
       <div class="row">
-        <div class="three columns">
-          <b>Registration Number :</b> <input type="text" class="inputName">
-        </div>
-
-        <div class="three columns">
-          <div class="dropdown">
-            Town:<input type="button" value="Dropdown" class="dropbtn" id="addMeBtn">
-            <div class="dropdown-content">
-              <a href="#">Cape Town</a>
-              <a href="#">Paarl</a>
-              <a href="#">Goerge</a>
-              <a href="#">Stellenbosch</a>
-            </div>
-          </div>
+        <div class="twelve columns">
+          <b>Registration Number :</b> <input type="text" class="inputName" placeholder="enter text here">
+          <input type="button" value="Add" class="addBtn" id="addMeBtn">
         </div>
       </div>
-      
+
+      <div class="row">
+        <div class="twelve columns">
+
+          <label>Please select town below</label>
+          <select class="eqrs-select col-md-11" name="options" id="options">
+<option value="value1">Select Town</option>
+<option value="value1">Cape Town</option>
+<option value="value2">Paarl</option>
+<option value="value3">George</option>
+<option value="value3">Stellenbosch</option>
+</select>
+        </div>
+      </div>
+
       <p>
         <p>
           <br>
-          <div class="row">
-            <div class="twelve columns">
-              <input type="button" value="Add" class="addBtn" id="addMeBtn">
-            </div>
-          </div>
+
           <div class="row">
             <div class="twelve columns">
               <div class="displayElement" id="displayMe">
@@ -50,7 +50,7 @@
 
             </div>
           </div>
-
+  </div>
 
   </div>
 

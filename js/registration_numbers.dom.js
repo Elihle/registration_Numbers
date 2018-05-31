@@ -12,17 +12,12 @@ function clickAddButton() {
     node.style.backgroundColor = 'yellow';
     node.style.borderColor = 'black';
     node.style.display = 'block';
-    node.style.alignItems = 'center';
+    node.style.align = 'center';
 
     node.appendChild(textnode);
     document.getElementById("displayMe").appendChild(node);
 
   }
-
-
-  // document.getElementById('displayMe').innerHTML = displayString;
-  // //displayElement.innerHTML = displayString;
-  // inputNameElem.value = '';
 
 
 addBtnElement.addEventListener('click', clickAddButton);
