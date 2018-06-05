@@ -9,6 +9,11 @@
   border-color: black;
   background-color: yellow;
 }
+#clearBtn{
+  background-color: red;
+  color: white;
+  width: 9em;
+}
 
 #addMeBtn {
   background-color: green;
@@ -28,7 +33,7 @@ select {
   padding: 10px 10px;
   margin: 2px 0;
   display: inline-block;
-  border: 1px solid red;
+  border: 1px solid white;
   border-radius: 4px;
   box-sizing: border-box;
 }

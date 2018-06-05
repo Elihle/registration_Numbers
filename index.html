@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
   <link rel="stylesheet" type="text/css" href="registration_number.css">
 
-  <title></title>
+  <title>Regisration Numbers</title>
 </head>
 
 <body>
@@ -20,21 +20,23 @@
     <p>
       <div class="row">
         <div class="twelve columns">
-          <b>Registration Number :</b> <input type="text" class="inputName" placeholder="enter text here">
+          <b>Registration Number :</b><input type="text" class="inputName" id="nameInput" placeholder="enter text here">
           <input type="button" value="Add" class="addBtn" id="addMeBtn">
+          <input type="button" value="Clear" class="clearBtn" id="clearBtn">
+
         </div>
       </div>
 
       <div class="row">
         <div class="twelve columns">
-
-          <label>Please select town below</label>
-          <select class="eqrs-select col-md-11" name="options" id="options">
+          <br>
+          <label>Town:</label>
+          <select name="options" id="options">
 <option value="value1">Select Town</option>
-<option value="value1">Cape Town</option>
-<option value="value2">Paarl</option>
-<option value="value3">George</option>
-<option value="value3">Stellenbosch</option>
+<option value="CA">Cape Town</option>
+<option value="CL">Paarl</option>
+<option value="CJ">George</option>
+<option value="CK">Stellenbosch</option>
 </select>
         </div>
       </div>
@@ -56,7 +58,8 @@
 
   </div>
 </body>
-<script src="js/registration_number.js" charset="utf-8"></script>
 <script src="js/registration_numbers.dom.js" charset="utf-8"></script>
+<script src="js/registration_number.js" charset="utf-8"></script>
+
 
 </html>
