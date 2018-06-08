@@ -1,52 +1,39 @@
-function Registrations(stored){
+function Registrations(stored) {
   var regs = '';
-  var regSored = stored || {};
+  var regStored = stored || {};
 
-  for (var i=0; i<stored;i++){
-    var location = 'CA'|| 'CK' || 'CJ' || 'CL';
-    if (stored[i].startsWith(location)){
-       regStored.push(stored[i]);
+  function allFromTown(location) {
+    if (regStored[location] === undefined &&
+      (location.startsWith('CA') || location.startsWith('CL') ||
+        location.startsWith('CK') || location.startsWith('CJ'))) {
+      regStored[location] = 0;
     }
   }
 
-function countRegs(){
-    return regStored.length;
-}
+  function getRegs() {
+    return regs;
+  }
 
-function countAllFromTown(regNum, location){
- if (regStored[location] === undefined && regStored[location].startsWith('CA')||regStored[location].startsWith('CL')||regStored[location].startsWith('CK')||regStored[location].startsWith('CJ')){
-   regStored[location] === 0;
- }
+  function getRegsMap() {
+    return Object.keys(regStored);
+  }
 
- // if (location === "Cape Town"){
- //   return "CA" + regNum;
- // }
- //
- // if (location === "Paarl"){
- //   return "CL" + regNum;
- // }
- //
- // if (location === "George"){
- //   return "CJ" + regNum;
- // }
- //
- // if (location === "Stellenbosch"){
- //   return "CK" + regNum;
- // }
-}
+  function filterAllTown(town) {
+    var allTowns = Object.keys(regStored);
+    if (town === 'Select Town') {
+      return allTowns;
+    }
+    var townFilter = allTowns.filter(function townChoice(townReg, townSelect) {
+      return townReg.startsWith(town);
+    })
+    location.hash = town;
+    return townFilter;
+  }
 
-function regCount(){
-  return Object.keys(stored);
-}
-
-function allTowns(){
-  return regStored;
-}
-
-return {
-  allRegs: countRegs,
-  fromTown: countAllFromTown,
-  countTowns: regCount,
-  townStored: allTowns
-}
+  return {
+    fromATown: allFromTown,
+    allRegs: getRegs,
+    regsMap: getRegsMap,
+    filterAll: filterAllTown
+  }
 }

@@ -1,24 +1,8 @@
-describe('countAllFromTown', function() {
+describe('Registration Numbers', function() {
 
-  it('return registration numbers from Cape Town', function() {
+  it('should return registration numbers from Cape Town', function() {
     var regNumbers = Registrations();
-    assert.equal("CA123", regNumbers.allRegs("Cape Town"));
+    regNumbers.regsMap("CA 251")
+    assert.equal(regNumbers.allRegs(), "CA 251");
   });
-  //
-  // it('return registration numbers from Cape Town', function() {
-  //   var regNumbers = Registrations();
-  //   assert.equal("CA123", regNumbers.allRegs("Cape Town"));
-  // });
-  //
-  // it('return registration numbers from Cape Town', function() {
-  //   var regNumbers = Registrations();
-  //   assert.equal("CA123", regNumbers.allRegs("Cape Town"));
-  // });
 });
-
-
-  it ('Should return ', function(){
-    let registr = Registration();
-    registr.reg('CA 12312');
-    assert.equal(registr.regNumber(), 'CA 12312');
-  });
