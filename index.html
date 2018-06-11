@@ -20,30 +20,38 @@
     <p>
       <div class="row">
         <div class="twelve columns">
-          <b>Registration Number :</b><input type="text" class="inputName" id="nameInput" placeholder="enter text here">
+          <b>Registration Number :</b>
+          <input type="text" class="inputName" id="nameInput" placeholder="enter text here">
           <input type="button" value="Add" class="addBtn" id="addMeBtn">
           <input type="button" value="Clear" class="clearBtn" id="clearBtn">
 
         </div>
       </div>
+      <div class="row">
+        <div class="twelve columns">
+          <div class="errorDisplay" id="errorDisplay">
 
-        <div class="row">
-          <div class="twelve columns options">
-            <br>
-            <label>Town:</label>
-            <select name="options" id="options">
-<option value="none" class="location">Select Town</option>
-<option value="CA" class="location">Cape Town</option>
-<option value="CL" class="location">Paarl</option>
-<option value="CJ" class="location">George</option>
-<option value="CK" class="location">Stellenbosch</option>
-</select>
           </div>
+
         </div>
+      </div>
+
+      <div class="row">
+        <div class="twelve columns options">
+          <br>
+          <label>Town:</label>
+          <select name="options" id="options">
+            <option value="all" class="location">Select All</option>
+            <option value="CA" class="location">Cape Town</option>
+            <option value="CL" class="location">Paarl</option>
+            <option value="CJ" class="location">George</option>
+            <option value="CK" class="location">Stellenbosch</option>
+          </select>
+        </div>
+      </div>
       <p>
         <p>
           <br>
-
           <div class="row">
             <div class="twelve columns">
               <div class="displayElement" id="displayMe">

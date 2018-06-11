@@ -1,4 +1,6 @@
-
+.errorDisplay{
+  color:red;
+}
 .wrapper {
   padding-top: 2em;
   background-color: #E8E8E8	;
@@ -26,6 +28,15 @@
 	height: 10px;
 	border: 0;
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.reg-number {
+  padding: 0.5rem;
+  border: 1px #000 solid;
+  background: yellow;
+  color: black;
+  display: block;
+  width: 15%;
 }
 
 select {

@@ -1,37 +1,36 @@
 var inputNameElem = document.querySelector('.inputName');
 var addBtnElement = document.querySelector('.addBtn');
 var clearBtnElement = document.querySelector('.clearBtn');
-var displayElement = document.querySelector('.display');
-var optionsElement = document.querySelector('.options');
+var displayElement = document.querySelector('.displayElement');
+var errorDisplayElem = document.querySelector('#errorDisplay');
+var optionsElement = document.querySelector('#options');
 
-var checkStored = function() {
-  var storedRegs = JSON.parse(localStorage.getItem("regStored"));
-  if (storedRegs) {
-    return storedRegs;
-  } else {
-    localStorage.setItem('regStored', JSON.stringify({}));
-    return storedRegs;
-  }
+var storedRegs = localStorage.getItem("regStored") ? JSON.parse(localStorage.getItem("regStored")) : {};
+var regNums = Registrations(storedRegs);
+
+function createReg(value) {
+  var btn = document.createElement('button');
+  btn.className = 'reg-number';
+  btn.textContent = value;
+  displayElement.appendChild(btn);
 }
 
-var regNums = Registrations(checkStored());
-
-function clickAddButton() {
+function addReg() {
   var enterInput = inputNameElem.value;
-  var displayTown = regNums.fromATown(enterInput);
-  var node = document.createElement("button");
-  var textnode = document.createTextNode(enterInput);
+  if (enterInput === '') {
+    errorDisplayElem.innerHTML = 'please enter a registration number';
+    return;
+  } else {
+    if (enterInput != '') {
+      errorDisplayElem.innerHTML = '';
+      if (regNums.fromATown(enterInput)) {
+        let reg = regNums.getReg();
+        createReg(reg);
+        localStorage.setItem('regStored', JSON.stringify(regNums.regsMap()));
+      }
 
-  //Styling button
-  node.style.backgroundColor = 'yellow';
-  node.style.borderColor = 'black';
-  node.style.color = 'black';
-  node.style.display = 'block';
-
-  node.appendChild(textnode);
-  document.getElementById("displayMe").appendChild(node);
-  document.getElementById("nameInput").value = '';
-  localStorage.setItem('regStored', JSON.stringify(regNums.regsMap()));
+    }
+  }
 }
 
 function clickClearButton() {
@@ -40,13 +39,23 @@ function clickClearButton() {
 };
 
 optionsElement.addEventListener('change', function() {
-  document.getElementById("displayMe").innerHTML = '';
-  var storeReg = optionsElement.value;
-  var filtered = regNums.filterAll(storeReg);
+  var townTag = optionsElement.value;
+  var filtered = regNums.filterAll(townTag);
+  displayElement.innerHTML = ''
+
   for (var i = 0; i < filtered.length; i++) {
-    clickAddButton(filtered[i]);
+    createReg(filtered[i]);
   }
 });
 
-addBtnElement.addEventListener('click', clickAddButton);
+addBtnElement.addEventListener('click', addReg);
 clearBtnElement.addEventListener('click', clickClearButton);
+
+window.addEventListener('load', function() {
+  let reg = regNums.regsMap();
+  let map = Object.keys(reg)
+  console.log(reg)
+  for (var i = 0; i < reg.length; i++) {
+    createReg(reg[i]);
+  }
+});
