@@ -11,8 +11,8 @@ function Registrations(stored) {
 
   function allFromTown(regNum) {
     if (regStored[regNum] === undefined &&
-      (location.startsWith('CA') || location.startsWith('CL') ||
-        location.startsWith('CK') || location.startsWith('CJ'))) {
+      (regNum.startsWith('CA') || regNum.startsWith('CL') ||
+        regNum.startsWith('CK') || regNum.startsWith('CJ'))) {
       regStored[regNum] = 0;
       reg = regNum;
       return true;
