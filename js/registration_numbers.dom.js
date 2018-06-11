@@ -42,6 +42,8 @@ optionsElement.addEventListener('change', function() {
   var townTag = optionsElement.value;
   var filtered = regNums.filterAll(townTag);
   displayElement.innerHTML = ''
+  errorDisplayElem.innerHTML = '';
+
 
   for (var i = 0; i < filtered.length; i++) {
     createReg(filtered[i]);
