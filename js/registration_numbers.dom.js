@@ -16,7 +16,7 @@ function createReg(value) {
 }
 
 function addReg() {
-  var enterInput = inputNameElem.value;
+  var enterInput = inputNameElem.value.toUpperCase().trim();
   if (enterInput === '') {
     errorDisplayElem.innerHTML = 'please enter a registration number';
     return;
@@ -30,7 +30,7 @@ function addReg() {
       }
       else {
         let map = regNums.regsMap()
-            map.indexOf(enterInput)!=-1 ? errorDisplayElem.innerHTML = "Registration number already exist" : errorDisplayElem.innerHTML = "Please enter a valid registration number";
+            map.indexOf(enterInput)!=-1 ? errorDisplayElem.innerHTML = "Registration number already exist" : errorDisplayElem.innerHTML = "Please enter a registration number that starts with CA, CL, CJ or CK ";
         }
 
     }

@@ -7,6 +7,7 @@ describe('Registration Numbers', function() {
     regNumbers.fromATown("CA 331")
 
     assert.deepEqual(regNumbers.filterAll('CA'), ['CA 251', 'CA 331'])
+
   });
 
   it('should return registration numbers from Paarl', function() {
