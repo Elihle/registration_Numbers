@@ -58,13 +58,10 @@ it('should return false if an invalid registration is entered', function() {
 
 });
 
-
-//
-// it('should return true if a valid registration is entered', function() {
-//
-// var regNumbers = RegistrationFactory({"CA 123456": 0});
-//     regNumbers.checkReg("CA 123456")
-//     registration_display.checkReg("CA 123456")
-//     assert.deepEqual(registration_display.regMap(), {"CA 123456": 0});
-
+it('should not add registration number if it entered twice', function() {
+     var regNumbers = Registrations();
+      regNumbers.fromATown('CL667');
+       regNumbers.fromATown('CL667');
+      assert.deepEqual(regNumbers.regsMap() ,[ 'CL667'] );
+  });
 });

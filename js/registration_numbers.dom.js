@@ -28,6 +28,10 @@ function addReg() {
         createReg(reg);
         localStorage.setItem('regStored', JSON.stringify(regNums.regsMap()));
       }
+      else {
+        let map = regNums.regsMap()
+            map.indexOf(enterInput)!=-1 ? errorDisplayElem.innerHTML = "Registration number already exist" : errorDisplayElem.innerHTML = "Please enter a valid registration number";
+        }
 
     }
   }
