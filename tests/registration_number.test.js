@@ -30,11 +30,11 @@ describe('Registration Numbers', function() {
 
   it('should return registration numbers from Goerge', function() {
     var regNumbers = Registrations();
-    regNumbers.fromATown("CJ 251")
+    regNumbers.fromATown("CAW 251")
     regNumbers.fromATown("CA 251")
-    regNumbers.fromATown("CJ 331")
+    regNumbers.fromATown("CAW 331")
 
-    assert.deepEqual(regNumbers.filterAll('CJ'), ['CJ 251', 'CJ 331'])
+    assert.deepEqual(regNumbers.filterAll('CAW'), ['CAW 251', 'CAW 331'])
   });
 
   it('should return a list of all the registration numbers', function() {
@@ -42,8 +42,8 @@ describe('Registration Numbers', function() {
 
     regNumbers.fromATown('CA 1900')
     regNumbers.fromATown('CL 7223')
-    regNumbers.fromATown('CJ 2532')
-    assert.deepEqual(regNumbers.regsMap(), ['CA 1900', 'CL 7223', 'CJ 2532'])
+    regNumbers.fromATown('CAW 2532')
+    assert.deepEqual(regNumbers.regsMap(), ['CA 1900', 'CL 7223', 'CAW 2532'])
 
 });
 
@@ -59,10 +59,10 @@ it('should return false if an invalid registration is entered', function() {
 
 });
 
-it('should not add registration number if it entered twice', function() {
+it('should not add registration number again if it is entered twice', function() {
      var regNumbers = Registrations();
-      regNumbers.fromATown('CL667');
-       regNumbers.fromATown('CL667');
-      assert.deepEqual(regNumbers.regsMap() ,[ 'CL667'] );
+      regNumbers.fromATown('CL 667');
+       regNumbers.fromATown('CL 667');
+      assert.deepEqual(regNumbers.regsMap() ,[ 'CL 667'] );
   });
 });
