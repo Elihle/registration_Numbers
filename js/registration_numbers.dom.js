@@ -30,7 +30,7 @@ function addReg() {
       }
       else {
         let map = regNums.regsMap()
-            map.indexOf(enterInput)!=-1 ? errorDisplayElem.innerHTML = "Registration number already exist" : errorDisplayElem.innerHTML = "Please enter a registration number that starts with CA, CL, CJ or CK ";
+            map.indexOf(enterInput)!=-1 ? errorDisplayElem.innerHTML = "Registration number already exist" : errorDisplayElem.innerHTML = "Please enter a registration number that starts with CA, CL, CAW or CK ";
         }
 
     }

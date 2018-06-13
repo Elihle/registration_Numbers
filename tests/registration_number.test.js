@@ -59,10 +59,17 @@ it('should return false if an invalid registration is entered', function() {
 
 });
 
-it('should not add registration number again if it is entered twice', function() {
+it('should not add a dulicate registration number', function() {
      var regNumbers = Registrations();
       regNumbers.fromATown('CL 667');
        regNumbers.fromATown('CL 667');
       assert.deepEqual(regNumbers.regsMap() ,[ 'CL 667'] );
   });
+
+  it('should not add an invalid registration number', function() {
+       var regNumbers = Registrations();
+        regNumbers.fromATown('CM 667');
+         regNumbers.fromATown('CM 667');
+        assert.deepEqual(regNumbers.regsMap() ,[] );
+    });
 });
